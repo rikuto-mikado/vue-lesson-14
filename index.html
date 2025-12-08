@@ -18,10 +18,11 @@
     </header>
     <section id="app">
       <h2>How Vue Works</h2>
-      <!-- v-model provides two-way data binding. It's a shorthand for :value + @input. -->
-      <!-- We replaced @input="saveInput" with v-model="currentUserInput" to simplify the code. -->
-      <!-- Now we don't need the saveInput method - v-model automatically updates currentUserInput. -->
-      <input type="text" v-model="currentUserInput">
+      <!-- ref allows us to get a reference to a DOM element directly. -->
+      <!-- We can access this element in our Vue methods using this.$refs.userText. -->
+      <!-- This is useful when we need to directly manipulate DOM elements. -->
+      <!-- <input type="text" v-model="currentUserInput"> -->
+      <input type="text" ref="userText">
       <button @click="setText">Set Text</button>
       <p>{{ message }}</p>
     </section>

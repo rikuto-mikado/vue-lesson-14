@@ -2,6 +2,30 @@
 
 ## What I Learned
 
+### Difference between `console.log()` and `console.dir()`
+
+When debugging DOM elements in Vue, there are two ways to output them to the console:
+
+| Method | Output Format | Best For |
+|--------|---------------|----------|
+| `console.log()` | HTML representation | Viewing element as DOM node |
+| `console.dir()` | JavaScript object properties | Viewing all properties and methods |
+
+#### Example
+
+```javascript
+// In a Vue method
+setText() {
+  console.log(this.$refs.userText);  // <input type="text" ref="userText">
+  console.dir(this.$refs.userText);  // HTMLInputElement { value: "", type: "text", ... }
+}
+```
+
+**When to use `console.dir()`:**
+- When you need to see all properties like `value`, `disabled`, `checked`
+- When you want to inspect available methods like `focus()`, `blur()`, `select()`
+- When debugging and you need to see the full object structure
+
 ### Understanding `key` vs `ref` in Vue
 
 These are two different special attributes that serve completely different purposes:
