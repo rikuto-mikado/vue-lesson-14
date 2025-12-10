@@ -17,6 +17,16 @@ const app = Vue.createApp({
       this.message = this.$refs.userText.value;
     },
   },
+  beforeCreate() {
+    console.log('beforeCreate()');
+  },
+  created() {
+    console.log('created()');
+  },
+  beforeMount() {
+    
+  }
+
 });
 
 app.mount('#app');
@@ -54,4 +64,4 @@ const proxy = new Proxy(data, handler);
 
 proxy.message = 'Hello!!!!'
 
-console.log(proxy.longMessage);
+// console.log(proxy.longMessage);
