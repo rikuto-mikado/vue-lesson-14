@@ -10,9 +10,11 @@ const app = Vue.createApp({
       this.currentUserInput = event.target.value;
     },
     setText() {
+      // Method 1: Use data saved via event handler
       // this.message = this.currentUserInput;
-      // this.message = this.$refs.userText;
-      console.log(this.$refs.userText);
+
+      // Method 2: Access DOM element value directly with $refs (recommended)
+      this.message = this.$refs.userText.value;
     },
   },
 });
