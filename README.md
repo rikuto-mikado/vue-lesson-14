@@ -418,3 +418,5 @@ Easy to confuse `ref` (DOM access) with `key` (list rendering). Remembered: `ref
 ## Memo
 
 Template refs (`ref` attribute with `this.$refs`) provide a Vue-friendly way to access DOM elements directly when needed, avoiding manual `querySelector` calls. Vue app instances are completely independent, each maintaining their own isolated data and methods, which is crucial for understanding scope. Vue's reactivity system is powered by JavaScript Proxies that intercept data changes and automatically trigger DOM updates.
+
+Vue lifecycle hooks are special functions that automatically run at specific moments during a component's lifetime (from creation to destruction). **The order is crucial** - they always execute in the same sequence: `beforeCreate` → `created` → `beforeMount` → `mounted` → (when data changes: `beforeUpdate` → `updated`) → `beforeUnmount` → `unmounted`. Each hook serves a specific purpose: creation hooks set up data, mounting hooks work with the DOM, update hooks respond to changes, and unmounting hooks clean up resources. Think of them as automatic checkpoints where you can run code at the right time in your component's lifecycle.
